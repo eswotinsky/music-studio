@@ -1,0 +1,21 @@
+.navbar {
+  background-color: darkslategray;
+}
+
+.navbar-nav {
+    flex-direction: row;
+}
+
+.nav>li {
+  float: right;
+  padding-left: 25px;
+  font-size: larger;
+}
+
+a {
+  color: lightgray;
+}
+
+a:hover {
+  color: goldenrod;
+}
