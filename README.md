@@ -25,3 +25,18 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+As a teacher, I want to:
+* have multiple distinct pages
+* display a welcome page with site routing info and call/s-to-action
+* display info about my background/education
+* display info about my studio location
+* display the policies I have for my students
+* have a contact form that emails me when completed and submitted
+
+* let visitors book an introductory appointment online, with a calendar that dynamically updates to show available/booked times
+  * get an email notification when a user books/cancels an intro lesson
+* let current students register accounts
+  * let students book/cancel lessons when logged in
+  * let students pay bills when logged in (online payment processing)
