@@ -1,3 +1,7 @@
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { masterFirebaseConfig } from './api-keys';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule }  from '@angular/forms';
@@ -11,6 +15,13 @@ import { ContactComponent } from './contact/contact.component';
 import { PoliciesComponent } from './policies/policies.component';
 import { StudioComponent } from './studio/studio.component';
 
+export const firebaseConfig = {
+  apiKey: masterFirebaseConfig.apiKey,
+  authDomain: masterFirebaseConfig.authDomain,
+  databaseURL: masterFirebaseConfig.databaseURL,
+  storageBucket: masterFirebaseConfig.storageBucket,
+  messagingSenderId: masterFirebaseConfig.messagingSenderId
+};
 
 @NgModule({
   declarations: [
@@ -22,6 +33,9 @@ import { StudioComponent } from './studio/studio.component';
     StudioComponent
   ],
   imports: [
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     BrowserModule,
     FormsModule,
     HttpModule,
