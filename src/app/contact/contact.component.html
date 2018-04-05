@@ -11,34 +11,35 @@
 
       <form [formGroup]="contactForm" (ngSubmit)="submitForm(contactForm.value)">
 
-        <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['firstName'].valid && contactForm.controls['firstName'].touched}">
+        <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['firstName'].valid && submitted}">
+
           <label for="firstName">First Name</label>
           <input id="firstName" class="form-control" type="text" [formControl]="contactForm.controls['firstName']">
-          <div *ngIf="contactForm.controls['firstName'].hasError('required') && contactForm.controls['firstName'].touched" class="alert alert-danger">Please include your first name.</div>
+          <div *ngIf="contactForm.controls['firstName'].hasError('required') && submitted" class="alert alert-danger">Please include your first name.</div>
         </div>
 
-        <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['lastName'].valid && contactForm.controls['lastName'].touched}">
+        <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['lastName'].valid && submitted}">
           <label for="lastName">Last Name</label>
           <input id="lastName" class="form-control" type="text" [formControl]="contactForm.controls['lastName']">
-          <div *ngIf="contactForm.controls['lastName'].hasError('required') && contactForm.controls['lastName'].touched" class="alert alert-danger">Please include your last name.</div>
+          <div *ngIf="contactForm.controls['lastName'].hasError('required') && submitted" class="alert alert-danger">Please include your last name.</div>
         </div>
 
-        <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['phoneNumber'].valid && contactForm.controls['phoneNumber'].touched}">
+        <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['phoneNumber'].valid && submitted}">
           <label for="phoneNumber">Phone Number</label>
           <input id="phoneNumber" class="form-control" type="tel" [formControl]="contactForm.controls['phoneNumber']">
-          <div *ngIf="contactForm.controls['phoneNumber'].hasError('required') && contactForm.controls['phoneNumber'].touched" class="alert alert-danger">Please include your phone number.</div>
-          <div *ngIf="contactForm.controls['phoneNumber'].hasError('minlength') && contactForm.controls['phoneNumber'].touched" class="alert alert-danger">Your phone number must be at least 7 characters.</div>
-          <div *ngIf="contactForm.controls['phoneNumber'].hasError('pattern') && contactForm.controls['phoneNumber'].touched" class="alert alert-danger">Your phone number must be a valid format.</div>
+          <div *ngIf="contactForm.controls['phoneNumber'].hasError('required') && submitted" class="alert alert-danger">Please include your phone number.</div>
+          <div *ngIf="contactForm.controls['phoneNumber'].hasError('minlength') && submitted" class="alert alert-danger">Your phone number must be at least 7 characters.</div>
+          <div *ngIf="contactForm.controls['phoneNumber'].hasError('pattern') && submitted" class="alert alert-danger">Your phone number must be a valid format.</div>
         </div>
 
-        <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['message'].valid && contactForm.controls['message'].touched}">
+        <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['message'].valid && submitted}">
           <label for="message">Message</label>
           <textarea id="message" class="form-control" [formControl]="contactForm.controls['message']"></textarea>
-          <div *ngIf="contactForm.controls['message'].hasError('required') && contactForm.controls['message'].touched" class="alert alert-danger">Don't forget to leave a message!</div>
+          <div *ngIf="contactForm.controls['message'].hasError('required') && submitted" class="alert alert-danger">Don't forget to leave a message!</div>
         </div>
 
         <div class="form-group">
-          <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid">Submit</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
         </div>
 
       </form>

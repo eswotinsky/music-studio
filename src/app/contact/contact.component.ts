@@ -9,6 +9,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class ContactComponent implements OnInit {
   contactForm: FormGroup;
   showMessage: boolean;
+  submitted: boolean;
 
   constructor(public formBuilder: FormBuilder) { }
 
@@ -31,6 +32,7 @@ export class ContactComponent implements OnInit {
     console.log(value);
     //still need to email value to owner
 
+    this.submitted = true;
     if (this.contactForm.valid) {
       this.showMessage = true;
     }
