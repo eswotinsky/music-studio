@@ -1,0 +1,21 @@
+<p *ngIf="!user">
+  Please sign in to view this page.
+</p>
+
+<div *ngIf="user">
+  <h2>  Your Profile Page</h2>
+  <hr>
+
+  <div class="row">
+    <div class="col-md-2">
+      <img src="{{user.photoURL}}" alt="Your Google profile pic">
+    </div>
+
+    <div class="col-md-10">
+      <p>Name: <strong>{{user.displayName}}</strong></p>
+      <p>Email: <strong>{{user.email}}</strong></p>
+    </div>
+  </div>
+
+
+</div>

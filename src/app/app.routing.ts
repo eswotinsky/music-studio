@@ -6,6 +6,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { ContactComponent } from './contact/contact.component';
 import { PoliciesComponent } from './policies/policies.component';
 import { StudioComponent } from './studio/studio.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const appRoutes: Routes = [
   {
@@ -31,6 +32,10 @@ const appRoutes: Routes = [
   {
     path: 'policies',
     component: PoliciesComponent
+  },
+  {
+    path: 'user',
+    component: UserProfileComponent
   }
 ];
 
