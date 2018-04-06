@@ -9,7 +9,7 @@
       <li><a routerLink="policies">Practice and Policies</a></li>
       <li><a routerLink="contact">Contact</a></li>
       <li *ngIf="isLoggedIn">
-        <a>{{userName}}</a>
+        <a id="username-display">{{userName}}</a>
         <a (click)="logout()">Log out</a>
       </li>
       <li *ngIf ="!isLoggedIn">
