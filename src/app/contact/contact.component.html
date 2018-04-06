@@ -24,6 +24,12 @@
           <div *ngIf="contactForm.controls['lastName'].hasError('required') && submitted" class="alert alert-danger">Please include your last name.</div>
         </div>
 
+        <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['email'].valid && submitted}">
+          <label for="email">Email</label>
+          <input id="email" class="form-control" type="email" [formControl]="contactForm.controls['email']">
+          <div *ngIf="(contactForm.controls['email'].hasError('required') || contactForm.controls['email'].hasError('email')) && submitted" class="alert alert-danger">Please include your email address.</div>
+        </div>
+
         <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['phoneNumber'].valid && submitted}">
           <label for="phoneNumber">Phone Number</label>
           <input id="phoneNumber" class="form-control" type="tel" [formControl]="contactForm.controls['phoneNumber']">

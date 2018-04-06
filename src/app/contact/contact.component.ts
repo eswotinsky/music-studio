@@ -25,6 +25,10 @@ export class ContactComponent implements OnInit {
         Validators.pattern(/\b\d{3}[-.]?\d{3}[-.]?\d{4}\b/g),
         Validators.minLength(7)
       ])],
+      'email': [null, Validators.compose([
+        Validators.required,
+        Validators.email
+      ])],
       'message': [null, Validators.required]
     });
   }
