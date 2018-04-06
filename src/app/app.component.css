@@ -1,5 +1,5 @@
 .navbar {
-  background-color: darkslategray;
+  background-color: slategray;
 }
 
 .navbar-nav {
@@ -13,13 +13,13 @@
 }
 
 a {
-  color: lightgray;
+  color: white;
 }
 
 a:hover {
-  color: goldenrod;
+  color: orange;
 }
 
 #username-display {
-  color: goldenrod;
+  color: yellow;
 }
