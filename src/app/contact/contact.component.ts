@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
   selector: 'app-contact',
@@ -12,7 +12,7 @@ export class ContactComponent implements OnInit {
   showMessage: boolean;
   submitted: boolean;
 
-  constructor(public formBuilder: FormBuilder, private angularFire: AngularFireModule) { }
+  constructor(public formBuilder: FormBuilder, private angularFireDB: AngularFireDatabase) { }
 
   ngOnInit() {
     this.showMessage = false;
@@ -30,20 +30,12 @@ export class ContactComponent implements OnInit {
   }
 
   submitForm(value: any) {
-    console.log(value);
-    //still need to email value to owner
-
-    const {firstName, lastName, phoneNumber, message} = this.contactForm.value;
-    const date = Date();
-    console.log(firstName, lastName, phoneNumber, message);
-
-    let formRequest = {firstName, lastName, phoneNumber, message, date}
-
-    this.angularFire.database.list('/messages').push(formRequest);
-    this.contactForm.reset();
-
     this.submitted = true;
     if (this.contactForm.valid) {
+      const {firstName, lastName, phoneNumber, message} = this.contactForm.value;
+      const date = Date();
+      let formRequest = {firstName, lastName, phoneNumber, message, date}
+      this.angularFireDB.list('/messages').push(formRequest);
       this.showMessage = true;
     }
   }
