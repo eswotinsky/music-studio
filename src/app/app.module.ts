@@ -14,6 +14,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { ContactComponent } from './contact/contact.component';
 import { PoliciesComponent } from './policies/policies.component';
 import { StudioComponent } from './studio/studio.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -30,7 +31,8 @@ export const firebaseConfig = {
     WelcomeComponent,
     ContactComponent,
     PoliciesComponent,
-    StudioComponent
+    StudioComponent,
+    CalendarComponent
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),
