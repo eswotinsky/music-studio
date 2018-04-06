@@ -8,7 +8,7 @@ import { AuthenticationService } from './authentication.service';
   providers: [AuthenticationService]
 })
 export class AppComponent {
-  title = 'app';
+  title = 'music-studio';
   user;
   private isLoggedIn: Boolean;
   private userName: String;
@@ -21,7 +21,6 @@ export class AppComponent {
         this.isLoggedIn =  true;
         this.userName = user.displayName;
       }
-      console.log(user);
     });
   }
 
