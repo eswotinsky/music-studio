@@ -13,7 +13,7 @@
         <a (click)="logout()" routerLink="">Log out</a>
       </li>
       <li *ngIf ="!isLoggedIn">
-        <a (click)="login()">Log in</a>
+        <a (click)="login()" routerLink="user">Log in</a>
       </li>
     </ul>
   </div>
