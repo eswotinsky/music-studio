@@ -25,9 +25,7 @@ This project serves as a template website for independent music teachers and oth
 1. [Install Node.js and npm](https://www.npmjs.com/get-npm), if not already present in your local environment.
 2. [Install Angular CLI (Command Line Interface)](https://angular.io/guide/quickstart).
 3. Clone this repository.
-4. Within your preferred shell, navigate to the project folder and run the following (this may take a moment to complete):
-
-  ```npm install```
+4. Within your preferred shell, navigate to the project folder and run ```npm install``` (this may take a moment to complete):
 
 ### Development server
 
