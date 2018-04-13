@@ -36,9 +36,9 @@ export class ContactComponent implements OnInit {
   submitForm(value: any) {
     this.submitted = true;
     if (this.contactForm.valid) {
-      const {firstName, lastName, phoneNumber, message} = this.contactForm.value;
+      const {firstName, lastName, phoneNumber, email, message} = this.contactForm.value;
       const date = Date();
-      let formRequest = {firstName, lastName, phoneNumber, message, date}
+      let formRequest = {firstName, lastName, phoneNumber, email, message, date}
       this.angularFireDB.list('/messages').push(formRequest);
       this.showMessage = true;
     }
